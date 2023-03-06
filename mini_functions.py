@@ -34,8 +34,8 @@ def cdCounter(cd):
     if br==1:
         return cd
     else:
-        print("Not supported value, we will work as if it was 90%")
-        return 1.64
+        print("Not supported value, we will work as if it was 95%")
+        return 1.960
 def mean(lista):
     s=0
     n=counter(lista)
