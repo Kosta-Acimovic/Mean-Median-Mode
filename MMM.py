@@ -1,30 +1,32 @@
-#br stands for counter
+#n stands for counter
 #vr stands for value
 #s stands for sum
 
+def counter(lista):
+    n = 0
+    for i in lista:
+        n += 1
+    return n
 def mean(lista):
     s=0
-    br=0
+    n=counter(lista)
     for i in lista:
         s+=i
-        br+=1
-    vr=s/br
+    vr=s/n
     print(vr)
 
 def median(lista):
-    br=0
+    n=counter(lista)
     vr=0
-    for i in lista:
-        br+=1
-    if br % 2 == 0:
-        br=br/2
-        br=int(br)
-        vr=lista[br]
+    if n % 2 == 0:
+        n=(n+1)/2
+        n=int(n)
+        vr=lista[n]
     else:
-        br = (br + 1) / 2
-        br=int(br)
-        vr = lista[br]
-    print(vr)
+        n = n / 2
+        n=int(n)
+        vr = lista[n]
+    return vr
 
 def mode(lista):
     vr=0
@@ -36,8 +38,8 @@ def mode(lista):
                 if vr2>vr:
                     vr=vr2
                     trvr = i
-    print(vr)
-    print(trvr)
+    print(trvr, "appears ", vr, "times")
+    return vr
 
 lista1=[11,25,16,43,55,75,25]
 lista2=[3,5,5,5,5,5,5,6,10,12,13]
