@@ -8,6 +8,22 @@ def counter(lista):
     for i in lista:
         n += 1
     return n
+def cdCounter(cd):
+    br=0
+    if cd==90:
+        cd=1.64
+        br+=1
+    if cd==95:
+        cd=1.96
+        br+=1
+    if cd==99:
+        cd=2.57
+        br+=1
+    if br==1:
+        return cd
+    else:
+        print("Not supported value, we will work as if it was 90%")
+        return 1.64
 def mean(lista):
     s=0
     n=counter(lista)
