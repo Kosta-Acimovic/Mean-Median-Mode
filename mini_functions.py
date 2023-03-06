@@ -10,15 +10,27 @@ def counter(lista):
     return n
 def cdCounter(cd):
     br=0
-    if cd==90:
-        cd=1.64
-        br+=1
-    if cd==95:
-        cd=1.96
-        br+=1
-    if cd==99:
-        cd=2.57
-        br+=1
+    if cd == 80:
+        cd = 1.282
+        br += 1
+    if cd == 85:
+        cd = 1.440
+        br += 1
+    if cd == 90:
+        cd = 1.645
+        br += 1
+    if cd == 95:
+        cd = 1.960
+        br += 1
+    if cd == 99:
+        cd = 2.576
+        br += 1
+    if cd == 99.5:
+        cd = 2.807
+        br += 1
+    if cd == 99.9:
+        cd = 3.291
+        br += 1
     if br==1:
         return cd
     else:
