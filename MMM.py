@@ -88,6 +88,16 @@ def sampleStandardDeviation(lista):
     vr=math.sqrt(vr)
     return vr
 
+def confidenceInterval(lista,cd):
+    cd=cdCounter(cd)
+    x=mean(lista)
+    n=counter(lista)
+    st=sampleStandardDeviation(lista)
+    x1=x-cd*(st/math.sqrt(n))
+    x2=x+cd*(st/math.sqrt(n))
+    vr=[x1,x2]
+    return vr
+
 lista1=[11,25,16,43,55,75,25]
 lista2=[3,5,5,5,5,5,5,6,10,12,13]
 lista3=[150, 642, 343, 221, 560, 770, 853]
