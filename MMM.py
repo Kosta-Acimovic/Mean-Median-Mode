@@ -1,26 +1,30 @@
+#br stands for counter
+#vr stands for value
+#s stands for sum
+
 def mean(lista):
-    suma=0
-    brojac=0
+    s=0
+    br=0
     for i in lista:
-        suma+=i
-        brojac+=1
-    k=suma/brojac
-    print(k)
+        s+=i
+        br+=1
+    vr=s/br
+    print(vr)
 
 def median(lista):
-    brojac=0
-    vrednost=0
+    br=0
+    vr=0
     for i in lista:
-        brojac+=1
-    if brojac % 2 == 0:
-        brojac=brojac/2
-        brojac=int(brojac)
-        vrednost=lista[brojac]
+        br+=1
+    if br % 2 == 0:
+        br=br/2
+        br=int(br)
+        vr=lista[br]
     else:
-        brojac = (brojac + 1) / 2
-        brojac=int(brojac)
-        vrednost = lista[brojac]
-    print(vrednost)
+        br = (br + 1) / 2
+        br=int(br)
+        vr = lista[br]
+    print(vr)
 
 def mode(lista):
     vr=0
@@ -36,4 +40,3 @@ def mode(lista):
 lista1=[11,25,16,43,55,75,25]
 lista2=[3,5,5,5,5,5,5,6,10,12,13]
 lista3=[150, 642, 343, 221, 560, 770, 853]
-mode(lista3)
