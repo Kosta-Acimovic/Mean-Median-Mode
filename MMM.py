@@ -41,7 +41,6 @@ def mode(lista):
                     trvr = i
     print(trvr, "appears ", vr, "times")
     return vr
-
 def populationVariance(lista):
     s = 0
     s1 = 0
