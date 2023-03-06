@@ -2,6 +2,7 @@
 #vr stands for value
 #s stands for sum
 
+import math
 def counter(lista):
     n = 0
     for i in lista:
@@ -13,7 +14,7 @@ def mean(lista):
     for i in lista:
         s+=i
     vr=s/n
-    print(vr)
+    return vr
 
 def median(lista):
     n=counter(lista)
@@ -41,6 +42,38 @@ def mode(lista):
     print(trvr, "appears ", vr, "times")
     return vr
 
+def populationVariance(lista):
+    s = 0
+    s1 = 0
+    k = mean(lista)
+    n = counter(lista)
+    for i in lista:
+        s1 = i - k
+        s1 = math.pow(s1, 2)
+        s += s1
+    s = s /n
+    return s
+def populationStandardDeviation(lista):
+    vr = populationVariance(lista)
+    vr = math.sqrt(vr)
+    return vr
+def sampleVariance(lista):
+    s=0
+    s1=0
+    k=mean(lista)
+    n=counter(lista)
+    for i in lista:
+        s1=i-k
+        s1=math.pow(s1,2)
+        s+=s1
+    s=s/(n-1)
+    return s
+def sampleStandardDeviation(lista):
+    vr=sampleVariance(lista)
+    vr=math.sqrt(vr)
+    return vr
+
 lista1=[11,25,16,43,55,75,25]
 lista2=[3,5,5,5,5,5,5,6,10,12,13]
 lista3=[150, 642, 343, 221, 560, 770, 853]
+listav=[6,8,10,12]
