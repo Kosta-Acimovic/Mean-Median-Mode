@@ -35,7 +35,9 @@ def mode(lista):
                 vr2+=1
                 if vr2>vr:
                     vr=vr2
+                    trvr = i
     print(vr)
+    print(trvr)
 
 lista1=[11,25,16,43,55,75,25]
 lista2=[3,5,5,5,5,5,5,6,10,12,13]
