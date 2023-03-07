@@ -46,6 +46,9 @@ def mean(lista):
     return vr
 
 def median(lista):
+    print("elements of the list were\n",lista)
+    print("elements of the list after sorting are")
+    lista = sortGeneral(lista)
     n=counter(lista)
     vr=0
     if n % 2 == 0:
@@ -125,12 +128,14 @@ def sortOneTime(lista):
                 n2+=1
             n1+=1
     print(lista)
+    return lista
 def sortMultiTime(lista):
     n=counter(lista)-1
     n1=0
     while n>=n1:
         sortOneTime(lista)
         n1+=1
+    return lista
 
 def sortGeneral(lista):
     c = counter(lista) - 1
@@ -152,6 +157,7 @@ def sortGeneral(lista):
 
         c1 += 1
     print(lista)
+    return lista
 
 lista1=[11,25,16,43,55,75,25]
 lista2=[3,5,5,5,5,5,5,6,10,12,13]
