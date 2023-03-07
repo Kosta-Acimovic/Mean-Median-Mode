@@ -48,7 +48,7 @@ def mean(lista):
 def median(lista):
     print("elements of the list were\n",lista)
     print("elements of the list after sorting are")
-    lista = sortGeneral(lista)
+    lista = sortGeneralAsc(lista)
     n=counter(lista)
     vr=0
     if n % 2 == 0:
@@ -114,7 +114,7 @@ def confidenceInterval(lista,cd):
     vr=[x1,x2]
     return vr
 
-def sortOneTime(lista):
+def sortOneTimeAsc(lista):
     n=counter(lista)-1
     n1=0
     n2=n1+1
@@ -129,15 +129,15 @@ def sortOneTime(lista):
             n1+=1
     print(lista)
     return lista
-def sortMultiTime(lista):
+def sortMultiTimeAsc(lista):
     n=counter(lista)-1
     n1=0
     while n>=n1:
-        sortOneTime(lista)
+        sortOneTimeAsc(lista)
         n1+=1
     return lista
 
-def sortGeneral(lista):
+def sortGeneralAsc(lista):
     c = counter(lista) - 1
     c1 = 0
     while c >= c1:
@@ -149,6 +149,50 @@ def sortGeneral(lista):
             for j in lista:
                 if n2 <= n:
                     if lista[n1] > lista[n2]:
+                        pom = lista[n1]
+                        lista[n1] = lista[n2]
+                        lista[n2] = pom
+                    n2 += 1
+                n1 += 1
+
+        c1 += 1
+    print(lista)
+    return lista
+
+def sortOneTimeDesc(lista):
+    n=counter(lista)-1
+    n1=0
+    n2=n1+1
+    for i in lista:
+        for j in lista:
+            if n2<=n:
+                if lista[n1]<lista[n2]:
+                    pom=lista[n1]
+                    lista[n1]=lista[n2]
+                    lista[n2]=pom
+                n2+=1
+            n1+=1
+    print(lista)
+    return lista
+def sortMultiTimeDesc(lista):
+    n=counter(lista)-1
+    n1=0
+    while n>=n1:
+        sortOneTimeDesc(lista)
+        n1+=1
+    return lista
+def sortGeneralDesc(lista):
+    c = counter(lista) - 1
+    c1 = 0
+    while c >= c1:
+
+        n = counter(lista) - 1
+        n1 = 0
+        n2 = n1 + 1
+        for i in lista:
+            for j in lista:
+                if n2 <= n:
+                    if lista[n1] < lista[n2]:
                         pom = lista[n1]
                         lista[n1] = lista[n2]
                         lista[n2] = pom
