@@ -110,6 +110,29 @@ def confidenceInterval(lista,cd):
     vr=[x1,x2]
     return vr
 
+def sortOneTime(lista):
+    n=counter(lista)-1
+    n1=0
+    n2=n1+1
+    for i in lista:
+        for j in lista:
+            if n2<=n:
+                if lista[n1]>lista[n2]:
+                    pom=lista[n1]
+                    lista[n1]=lista[n2]
+                    lista[n2]=pom
+                n2+=1
+            n1+=1
+    print(lista)
+def sortMultiTime(lista):
+    n=counter(lista)-1
+    n1=0
+    while n>=n1:
+        sortOneTime(lista)
+        n1+=1
+
+
+
 lista1=[11,25,16,43,55,75,25]
 lista2=[3,5,5,5,5,5,5,6,10,12,13]
 lista3=[150, 642, 343, 221, 560, 770, 853]
