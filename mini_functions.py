@@ -12,35 +12,26 @@ def counter(lista):
     return n
 
 def cdCounter(cd):
-    br = 0
     if cd < 1:
         cd *= 100
     if cd == 80:
         cd = 1.282
-        br += 1
-    if cd == 85:
+    elif cd == 85:
         cd = 1.440
-        br += 1
-    if cd == 90:
+    elif cd == 90:
         cd = 1.645
-        br += 1
-    if cd == 95:
+    elif cd == 95:
         cd = 1.960
-        br += 1
-    if cd == 99:
+    elif cd == 99:
         cd = 2.576
-        br += 1
-    if cd == 99.5:
+    elif cd == 99.5:
         cd = 2.807
-        br += 1
-    if cd == 99.9:
+    elif cd == 99.9:
         cd = 3.291
-        br += 1
-    if br == 1:
-        return cd
     else:
         print("Not supported value, we will work as if it was 95%")
         return 1.960
+    return cd
 
 def mean(lista):
     s = 0
