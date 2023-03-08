@@ -232,6 +232,19 @@ def quartile25(lista):
         p2 = p1 - 1
         Q1 = (lista[p2] + lista[p1]) / 2
     return Q1
+def quartile50(lista):
+    lista = sortGeneralAsc(lista)
+    n = counter(lista)
+    p = (n + 1) / 2
+    Q2 = 0
+    if p % 1 == 0:
+        p = int(p) - 1
+        Q2 = lista[p]
+    else:
+        p1 = int(p)
+        p2 = p1 - 1
+        Q2 = (lista[p2] + lista[p1]) / 2
+    return Q2
 def quartile75(lista):
     lista = sortGeneralAsc(lista)
     n = counter(lista)
