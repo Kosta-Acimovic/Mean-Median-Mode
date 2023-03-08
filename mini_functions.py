@@ -11,6 +11,8 @@ def counter(lista):
     return n
 def cdCounter(cd):
     br=0
+    if cd<1:
+        cd*=100
     if cd == 80:
         cd = 1.282
         br += 1
