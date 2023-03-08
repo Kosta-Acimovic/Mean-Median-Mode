@@ -218,3 +218,32 @@ def marginOfError(lista, cd):
     cd = cdCounter(cd)
     vr = cd * (st / (math.sqrt(n)))
     return vr
+
+def quartile25(lista):
+    lista=sortGeneralAsc(lista)
+    n=counter(lista)
+    p=(n+1)/4
+    Q1=0
+    if p%1==0:
+        p=int(p)-1
+        Q1=lista[p]
+    else:
+        p1 = int(p)
+        p2 = p1 - 1
+        Q1 = (lista[p2] + lista[p1]) / 2
+    return Q1
+def quartile75(lista):
+    lista = sortGeneralAsc(lista)
+    n = counter(lista)
+    p = (3*(n + 1)) / 4
+    Q3 = 0
+    if p % 1 == 0:
+        p = int(p) - 1
+        Q3 = lista[p]
+        print(Q3)
+    else:
+        p1 = int(p)
+        p2 = p1 - 1
+        Q3 = (lista[p2] + lista[p1]) / 2
+        print(Q3)
+    return Q3
