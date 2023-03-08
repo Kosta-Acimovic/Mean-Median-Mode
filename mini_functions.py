@@ -260,3 +260,9 @@ def quartile75(lista):
         Q3 = (lista[p2] + lista[p1]) / 2
         print(Q3)
     return Q3
+
+def IQR(lista):
+    Q1=quartile25(lista)
+    Q3=quartile75(lista)
+    vr=Q3-Q1
+    return vr
