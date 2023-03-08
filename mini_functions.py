@@ -203,7 +203,8 @@ def sortGeneralDesc(lista):
     print(lista)
     return lista
 
-lista1=[11,25,16,43,55,75,25]
-lista2=[3,5,5,5,5,5,5,6,10,12,13]
-lista3=[150, 642, 343, 221, 560, 770, 853]
-listav=[6,8,10,12]
+def StandardError(lista):
+    n=counter(lista)
+    st=sampleStandardDeviation(lista)
+    vr=st/(math.sqrt(n))
+    return vr
