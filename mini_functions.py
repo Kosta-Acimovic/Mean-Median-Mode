@@ -210,3 +210,10 @@ def StandardError(lista):
     st=sampleStandardDeviation(lista)
     vr=st/(math.sqrt(n))
     return vr
+
+def marginOfError(lista,cd):
+    n=counter(lista)
+    st=populationStandardDeviation(lista)
+    cd=cdCounter(cd)
+    vr=cd*(st/(math.sqrt(n)))
+    return vr
