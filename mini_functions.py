@@ -4,7 +4,19 @@
 # c stands for condition
 
 import math
+def listMaker():
+    n=input("How much elements your list will have:\t")
+    n=int(n)
+    n=round(n)
+    if n<=0:
+        print("Your list size is not supported")
+        return
 
+    lista=[]
+    for i in range(0,n):
+        k=input("Enter value:\t")
+        lista.append(k)
+    return lista
 def counter(lista):
     n = 0
     for i in lista:
@@ -33,15 +45,18 @@ def cdCounter(cd):
         return 1.960
     return cd
 
-def mean(lista):
+def mean():
+    lista=listMaker()
     s = 0
     n = counter(lista)
     for i in lista:
+        i=int(i)
         s += i
     vr = s / n
     return vr
 
-def median(lista):
+def median():
+    lista=listMaker()
     print("elements of the list were\n", lista)
     print("elements of the list after sorting are")
     lista = sortGeneralAsc(lista)
@@ -57,7 +72,8 @@ def median(lista):
         vr = lista[n]
     return vr
 
-def mode(lista):
+def mode():
+    lista=listMaker()
     vr = 0
     for i in lista:
         vr2 = 0
@@ -70,7 +86,8 @@ def mode(lista):
     print(trvr, "appears ", vr, "times")
     return vr
 
-def populationVariance(lista):
+def populationVariance():
+    lista=listMaker()
     s = 0
     s1 = 0
     k = mean(lista)
@@ -82,12 +99,14 @@ def populationVariance(lista):
     s = s / n
     return s
 
-def populationStandardDeviation(lista):
+def populationStandardDeviation():
+    lista=listMaker()
     vr = populationVariance(lista)
     vr = math.sqrt(vr)
     return vr
 
-def sampleVariance(lista):
+def sampleVariance():
+    lista=listMaker()
     s = 0
     s1 = 0
     k = mean(lista)
@@ -99,12 +118,14 @@ def sampleVariance(lista):
     s = s / (n - 1)
     return s
 
-def sampleStandardDeviation(lista):
+def sampleStandardDeviation():
+    lista=listMaker()
     vr = sampleVariance(lista)
     vr = math.sqrt(vr)
     return vr
 
-def confidenceInterval(lista, cd):
+def confidenceInterval(cd):
+    lista=listMaker()
     cd = cdCounter(cd)
     x = mean(lista)
     n = counter(lista)
@@ -114,7 +135,8 @@ def confidenceInterval(lista, cd):
     vr = [x1, x2]
     return vr
 
-def sortOneTimeAsc(lista):
+def sortOneTimeAsc():
+    lista=listMaker()
     n = counter(lista) - 1
     n1 = 0
     n2 = n1 + 1
@@ -130,7 +152,8 @@ def sortOneTimeAsc(lista):
     print(lista)
     return lista
 
-def sortMultiTimeAsc(lista):
+def sortMultiTimeAsc():
+    lista=listMaker()
     n = counter(lista) - 1
     n1 = 0
     while n >= n1:
@@ -138,7 +161,8 @@ def sortMultiTimeAsc(lista):
         n1 += 1
     return lista
 
-def sortGeneralAsc(lista):
+def sortGeneralAsc():
+    lista=listMaker()
     c = counter(lista) - 1
     c1 = 0
     while c >= c1:
@@ -160,7 +184,8 @@ def sortGeneralAsc(lista):
     print(lista)
     return lista
 
-def sortOneTimeDesc(lista):
+def sortOneTimeDesc():
+    lista=listMaker()
     n = counter(lista) - 1
     n1 = 0
     n2 = n1 + 1
@@ -176,7 +201,8 @@ def sortOneTimeDesc(lista):
     print(lista)
     return lista
 
-def sortMultiTimeDesc(lista):
+def sortMultiTimeDesc():
+    lista=listMaker()
     n = counter(lista) - 1
     n1 = 0
     while n >= n1:
@@ -184,7 +210,8 @@ def sortMultiTimeDesc(lista):
         n1 += 1
     return lista
 
-def sortGeneralDesc(lista):
+def sortGeneralDesc():
+    lista=listMaker()
     c = counter(lista) - 1
     c1 = 0
     while c >= c1:
@@ -206,20 +233,23 @@ def sortGeneralDesc(lista):
     print(lista)
     return lista
 
-def StandardError(lista):
+def StandardError():
+    lista=listMaker()
     n = counter(lista)
     st = sampleStandardDeviation(lista)
     vr = st / (math.sqrt(n))
     return vr
 
-def marginOfError(lista, cd):
+def marginOfError(cd):
+    lista=listMaker()
     n = counter(lista)
     st = populationStandardDeviation(lista)
     cd = cdCounter(cd)
     vr = cd * (st / (math.sqrt(n)))
     return vr
 
-def quartile25(lista):
+def quartile25():
+    lista=listMaker()
     lista=sortGeneralAsc(lista)
     n=counter(lista)
     p=(n+1)/4
@@ -232,7 +262,8 @@ def quartile25(lista):
         p2 = p1 - 1
         Q1 = (lista[p2] + lista[p1]) / 2
     return Q1
-def quartile50(lista):
+def quartile50():
+    lista=listMaker()
     lista = sortGeneralAsc(lista)
     n = counter(lista)
     p = (n + 1) / 2
@@ -245,7 +276,8 @@ def quartile50(lista):
         p2 = p1 - 1
         Q2 = (lista[p2] + lista[p1]) / 2
     return Q2
-def quartile75(lista):
+def quartile75():
+    lista=listMaker()
     lista = sortGeneralAsc(lista)
     n = counter(lista)
     p = (3*(n + 1)) / 4
@@ -261,7 +293,8 @@ def quartile75(lista):
         print(Q3)
     return Q3
 
-def IQR(lista):
+def IQR():
+    lista=listMaker()
     Q1=quartile25(lista)
     Q3=quartile75(lista)
     vr=Q3-Q1
